@@ -29,8 +29,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-6xl md:text-8xl font-heading font-bold tracking-tight mb-4"
         >
-          <span className="text-foreground">Wise</span>
-          <span className="text-primary text-glow-strong">FA</span>
+          <span className="text-foreground">Vinity </span>
+          <span className="text-primary text-glow-strong">RP</span>
         </motion.h1>
 
         <motion.p
@@ -99,7 +99,7 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 0.6 }}
           className="max-w-xl text-sm text-muted-foreground leading-relaxed mb-12"
         >
-          <strong className="text-foreground">WiseFA</strong> est le{" "}
+          <strong className="text-foreground">Vinity RP</strong> est le{" "}
           <strong className="text-foreground">meilleur Free Access GTA RP</strong> sur{" "}
           <strong className="text-foreground">FiveM</strong> en France. Rejoins notre serveur sans whitelist
           et découvre une expérience roleplay immersive avec plus de 8 000 joueurs actifs.
