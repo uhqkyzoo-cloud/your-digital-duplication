@@ -1,14 +1,29 @@
 import { Play, MessageCircle, Users, Shield, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const stats = [
-  { icon: Users, value: "400 +", label: "joueurs le soir" },
-  { icon: MessageCircle, value: "8 000 +", label: "membres Discord" },
-  { icon: Shield, value: "50 +", label: "staffs actifs" },
-];
+const DISCORD_WIDGET_URL = "https://discord.com/api/guilds/1279431715516977215/widget.json";
 
 const HeroSection = () => {
+  const [discordMembers, setDiscordMembers] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch(DISCORD_WIDGET_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.presence_count !== undefined) {
+          setDiscordMembers(data.presence_count);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const stats = [
+    { icon: Users, value: "400 +", label: "joueurs le soir" },
+    { icon: MessageCircle, value: discordMembers !== null ? `${discordMembers.toLocaleString("fr-FR")}` : "...", label: "membres en ligne" },
+    { icon: Shield, value: "50 +", label: "staffs actifs" },
+  ];
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background */}
