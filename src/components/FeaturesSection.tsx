@@ -35,7 +35,7 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground"
         >
-          Pourquoi choisir <span className="text-primary text-glow">WiseFA</span> ?
+          Pourquoi choisir <span className="text-primary text-glow">Vinity RP</span> ?
         </motion.h2>
         <motion.p
           initial={{ y: 10, opacity: 0 }}
