@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="border-t border-border py-8 px-4">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="text-sm text-muted-foreground">
-          © 2025 WiseFA — Tous droits réservés
+          © 2025 Vinity RP — Tous droits réservés
         </span>
         <div className="flex items-center gap-6">
           <a
