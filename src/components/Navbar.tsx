@@ -7,8 +7,8 @@ const navLinks = [
   { label: "FAQ", href: "#faq" },
   { label: "Discord", href: "https://discord.gg/wisefa" },
   { label: "Boutique", href: "https://wisefa.tebex.io/" },
-  { label: "Règlement", href: "https://wise-fa.gitbook.io/wisefa" },
-  { label: "TikTok", href: "https://www.tiktok.com/@wise_fa" },
+  { label: "Règlement", href: "https://astrafr.gitbook.io/reglement/" },
+  { label: "TikTok", href: "https://www.tiktok.com/@astrafr.rp" },
 ];
 
 const Navbar = () => {
