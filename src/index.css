@@ -15,8 +15,8 @@
     --popover: 216 28% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 190 100% 50%;
-    --primary-foreground: 216 28% 7%;
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 216 28% 14%;
     --secondary-foreground: 210 40% 98%;
@@ -24,23 +24,23 @@
     --muted: 216 28% 14%;
     --muted-foreground: 215 20% 55%;
 
-    --accent: 190 100% 50%;
-    --accent-foreground: 216 28% 7%;
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 216 28% 18%;
     --input: 216 28% 18%;
-    --ring: 190 100% 50%;
+    --ring: 0 85% 55%;
 
     --radius: 0.75rem;
 
     --font-heading: 'Rajdhani', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --glow-cyan: 0 0 20px hsl(190 100% 50% / 0.4);
-    --glow-cyan-strong: 0 0 40px hsl(190 100% 50% / 0.6);
+    --glow-cyan: 0 0 20px hsl(0 85% 55% / 0.4);
+    --glow-cyan-strong: 0 0 40px hsl(0 85% 55% / 0.6);
   }
 }
 
