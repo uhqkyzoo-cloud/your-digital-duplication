@@ -114,7 +114,7 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 0.6 }}
           className="max-w-xl text-sm text-muted-foreground leading-relaxed mb-12"
         >
-          <strong className="text-foreground">Vinity RP</strong> est le{" "}
+          <strong className="text-foreground">Astra RP</strong> est le{" "}
           <strong className="text-foreground">meilleur Free Access GTA RP</strong> sur{" "}
           <strong className="text-foreground">FiveM</strong> en France. Rejoins notre serveur sans whitelist
           et découvre une expérience roleplay immersive avec plus de 8 000 joueurs actifs.

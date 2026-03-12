@@ -59,7 +59,7 @@ const FeaturesSection = () => {
             >
               <feature.icon
                 size={32}
-                className="text-primary mb-4 group-hover:drop-shadow-[0_0_8px_hsl(190,100%,50%)] transition-all"
+                className="text-primary mb-4 group-hover:drop-shadow-[0_0_8px_hsl(0,85%,55%)] transition-all"
               />
               <h3 className="text-xl font-heading font-semibold text-foreground mb-2">
                 {feature.title}
