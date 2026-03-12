@@ -1,12 +1,17 @@
 import { Play, MessageCircle, Users, Shield, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import heroBg from "@/assets/hero-bg.webp";
+import gallery1 from "@/assets/gallery-1.png";
+import gallery2 from "@/assets/gallery-2.png";
+import gallery3 from "@/assets/gallery-3.jpg";
 
 const DISCORD_WIDGET_URL = "https://discord.com/api/guilds/1279431715516977215/widget.json";
+const bgImages = [heroBg, gallery1, gallery2, gallery3];
 
 const HeroSection = () => {
   const [discordMembers, setDiscordMembers] = useState<number | null>(null);
+  const [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
     fetch(DISCORD_WIDGET_URL)
@@ -19,6 +24,13 @@ const HeroSection = () => {
       .catch(() => {});
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % bgImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
     { icon: Users, value: "400 +", label: "joueurs le soir" },
     { icon: MessageCircle, value: discordMembers !== null ? `${discordMembers.toLocaleString("fr-FR")}` : "...", label: "membres en ligne" },
@@ -26,13 +38,20 @@ const HeroSection = () => {
   ];
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background slideshow */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="GTA RP scene"
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentBg}
+            src={bgImages[currentBg]}
+            alt="Astra RP"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 gradient-overlay" />
       </div>
 
