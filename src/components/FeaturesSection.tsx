@@ -44,7 +44,7 @@ const FeaturesSection = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-muted-foreground mb-16"
         >
-          Vinity RP, l'expérience GTA RP sans compromis sur FiveM
+          Astra RP, l'expérience GTA RP sans compromis sur FiveM
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
