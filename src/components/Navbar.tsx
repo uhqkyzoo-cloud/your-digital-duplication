@@ -20,7 +20,7 @@ const Navbar = () => {
     >
       <a href="/" className="flex items-center gap-2">
         <span className="text-2xl font-heading font-bold text-foreground">
-          Vinity <span className="text-primary text-glow">RP</span>
+          Astra <span className="text-primary text-glow">RP</span>
         </span>
       </a>
 
