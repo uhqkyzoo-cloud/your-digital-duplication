@@ -1,7 +1,7 @@
 import { Play, MessageCircle, Users, Shield, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 
 const DISCORD_WIDGET_URL = "https://discord.com/api/guilds/1279431715516977215/widget.json";
 
