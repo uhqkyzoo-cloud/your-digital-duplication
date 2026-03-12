@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "À propos", href: "#features" },
@@ -19,6 +20,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 glass-card"
     >
       <a href="/" className="flex items-center gap-2">
+        <img src={logo} alt="Astra RP logo" className="w-8 h-8 object-contain" />
         <span className="text-2xl font-heading font-bold text-foreground">
           Astra <span className="text-primary text-glow">RP</span>
         </span>
