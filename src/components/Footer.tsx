@@ -16,7 +16,7 @@ const Footer = () => {
             Discord
           </a>
           <a
-            href="https://www.tiktok.com/@wise_fa"
+            href="https://www.tiktok.com/@astrafr.rp"
             className="text-muted-foreground hover:text-primary transition-colors text-sm"
           >
             TikTok
