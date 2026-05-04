@@ -45,7 +45,7 @@ const GallerySection = () => {
               >
                 <img
                   src={src}
-                  alt={`Screenshot Avenya Fa ${i + 1}`}
+                  alt={`Screenshot Avenya RP ${i + 1}`}
                   className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>
@@ -85,7 +85,7 @@ const GallerySection = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
               src={images[selectedIndex]}
-              alt={`Screenshot Avenya Fa ${selectedIndex + 1}`}
+              alt={`Screenshot Avenya RP ${selectedIndex + 1}`}
               className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl"
               onClick={(e) => e.stopPropagation()}
             />

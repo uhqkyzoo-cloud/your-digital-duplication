@@ -44,7 +44,7 @@ const HeroSection = () => {
           <motion.img
             key={currentBg}
             src={bgImages[currentBg]}
-            alt="Avenya Fa"
+            alt="Avenya RP"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,7 +64,7 @@ const HeroSection = () => {
           className="text-6xl md:text-8xl font-heading font-bold tracking-tight mb-4"
         >
           <span className="text-foreground">Avenya </span>
-          <span className="text-primary text-glow-strong">Fa</span>
+          <span className="text-primary text-glow-strong">RP</span>
         </motion.h1>
 
         <motion.p
@@ -133,7 +133,7 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 0.6 }}
           className="max-w-xl text-sm text-muted-foreground leading-relaxed mb-12"
         >
-          <strong className="text-foreground">Avenya Fa</strong> est le{" "}
+          <strong className="text-foreground">Avenya RP</strong> est le{" "}
           <strong className="text-foreground">meilleur Free Access GTA RP</strong> sur{" "}
           <strong className="text-foreground">FiveM</strong> en France. Rejoins notre serveur sans whitelist
           et découvre une expérience roleplay immersive avec plus de 8 000 joueurs actifs.
