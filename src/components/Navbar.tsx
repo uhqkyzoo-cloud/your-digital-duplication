@@ -22,7 +22,7 @@ const Navbar = () => {
       <a href="/" className="flex items-center gap-2">
         <img src={logo} alt="Avenya Fa logo" className="w-8 h-8 object-contain" />
         <span className="text-2xl font-heading font-bold text-foreground">
-          Avenya <span className="text-primary text-glow">RP</span>
+          Avenya <span className="text-primary text-glow">Fa</span>
         </span>
       </a>
 

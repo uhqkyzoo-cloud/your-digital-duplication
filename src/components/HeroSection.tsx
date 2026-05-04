@@ -64,7 +64,7 @@ const HeroSection = () => {
           className="text-6xl md:text-8xl font-heading font-bold tracking-tight mb-4"
         >
           <span className="text-foreground">Avenya </span>
-          <span className="text-primary text-glow-strong">RP</span>
+          <span className="text-primary text-glow-strong">Fa</span>
         </motion.h1>
 
         <motion.p
