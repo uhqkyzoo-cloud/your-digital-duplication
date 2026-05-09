@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import rulesData from "@/data/rules.json";
@@ -15,6 +15,20 @@ const data = rulesData as Section[];
 const Reglement = () => {
   const [activeSlug, setActiveSlug] = useState<string>(data[0]?.pages[0]?.slug ?? "");
   const [query, setQuery] = useState("");
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    data.forEach((s, i) => (initial[s.id] = i === 0));
+    return initial;
+  });
+
+  const toggleSection = (id: string) =>
+    setOpenSections((o) => ({ ...o, [id]: !o[id] }));
+
+  const expandAll = (open: boolean) => {
+    const next: Record<string, boolean> = {};
+    data.forEach((s) => (next[s.id] = open));
+    setOpenSections(next);
+  };
 
   const allPages = useMemo(
     () => data.flatMap((s) => s.pages.map((p) => ({ ...p, sectionTitle: s.title }))),
@@ -51,30 +65,46 @@ const Reglement = () => {
               className="w-full pl-9 pr-3 py-2 bg-background/50 border border-border rounded-lg text-sm focus:border-primary outline-none"
             />
           </div>
-          <nav className="space-y-4">
-            {filteredSections.map((sec) => (
-              <div key={sec.id}>
-                <h3 className="font-heading font-bold text-primary text-sm uppercase tracking-wide mb-2">
-                  {sec.title}
-                </h3>
-                <ul className="space-y-1">
-                  {sec.pages.map((p) => (
-                    <li key={p.slug} style={{ paddingLeft: `${p.depth * 12}px` }}>
-                      <button
-                        onClick={() => setActiveSlug(p.slug)}
-                        className={`text-left w-full text-sm py-1.5 px-2 rounded transition-colors ${
-                          activeSlug === p.slug
-                            ? "bg-primary/10 text-primary"
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                        }`}
-                      >
-                        {p.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="flex justify-between text-xs text-muted-foreground mb-2 px-1">
+            <button onClick={() => expandAll(true)} className="hover:text-primary">Tout ouvrir</button>
+            <button onClick={() => expandAll(false)} className="hover:text-primary">Tout fermer</button>
+          </div>
+          <nav className="space-y-2">
+            {filteredSections.map((sec) => {
+              const isOpen = query.trim() ? true : openSections[sec.id] ?? false;
+              return (
+                <div key={sec.id}>
+                  <button
+                    onClick={() => toggleSection(sec.id)}
+                    className="w-full flex items-center justify-between font-heading font-bold text-primary text-sm uppercase tracking-wide py-2 px-2 rounded hover:bg-primary/5"
+                  >
+                    <span>{sec.title}</span>
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <ul className="space-y-1 mt-1">
+                      {sec.pages.map((p) => (
+                        <li key={p.slug} style={{ paddingLeft: `${p.depth * 12}px` }}>
+                          <button
+                            onClick={() => setActiveSlug(p.slug)}
+                            className={`text-left w-full text-sm py-1.5 px-2 rounded transition-colors ${
+                              activeSlug === p.slug
+                                ? "bg-primary/10 text-primary"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                            }`}
+                          >
+                            {p.title}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
           </nav>
         </aside>
 
