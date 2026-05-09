@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import rulesData from "@/data/rules.json";
