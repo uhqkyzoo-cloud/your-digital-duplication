@@ -7,7 +7,7 @@ const navLinks = [
   { label: "FAQ", href: "#faq" },
   { label: "Discord", href: "https://discord.gg/wisefa" },
   { label: "Boutique", href: "https://wisefa.tebex.io/" },
-  { label: "Règlement", href: "https://astrafr.gitbook.io/reglement/" },
+  { label: "Règlement", href: "/reglement" },
   { label: "TikTok", href: "https://www.tiktok.com/@astrafr.rp?is_from_webapp=1&sender_device=pc" },
 ];
 
