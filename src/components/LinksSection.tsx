@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const links = [
   { icon: Play, label: "Jouer", href: "fivem://connect/cfx.re/join/zxz9q9" },
   { icon: ShoppingBag, label: "Boutique", href: "https://wisefa.tebex.io/" },
-  { icon: BookOpen, label: "Règlement", href: "https://astrafr.gitbook.io/reglement/" },
+  { icon: BookOpen, label: "Règlement", href: "/reglement" },
   { icon: UserPlus, label: "Staff", href: "https://docs.google.com/forms/d/1TT5kijhjVQmScza6LxUztNze5hbIhF2yxzYQlck73sk/edit" },
 ];
 
