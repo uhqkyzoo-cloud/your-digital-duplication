@@ -15,6 +15,20 @@ const data = rulesData as Section[];
 const Reglement = () => {
   const [activeSlug, setActiveSlug] = useState<string>(data[0]?.pages[0]?.slug ?? "");
   const [query, setQuery] = useState("");
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    data.forEach((s, i) => (initial[s.id] = i === 0));
+    return initial;
+  });
+
+  const toggleSection = (id: string) =>
+    setOpenSections((o) => ({ ...o, [id]: !o[id] }));
+
+  const expandAll = (open: boolean) => {
+    const next: Record<string, boolean> = {};
+    data.forEach((s) => (next[s.id] = open));
+    setOpenSections(next);
+  };
 
   const allPages = useMemo(
     () => data.flatMap((s) => s.pages.map((p) => ({ ...p, sectionTitle: s.title }))),
